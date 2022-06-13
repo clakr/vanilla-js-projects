@@ -1,3 +1,5 @@
+// Global Variables
+
 const colors = {
   names: [
     // Red
@@ -161,17 +163,23 @@ const colors = {
     'DarkSlateGray',
     'Black',
   ],
+  hex: ['#000000'],
 }
+
+// DOM Variables
 
 const bgColor = document.querySelector('.main__hero')
 const textColor = document.querySelector('.main__text')
 const palette = document.querySelector('.main__emoji')
 
-palette.addEventListener('click', (e) => {
-  const random = Math.floor(Math.random() * colors.names.length)
+// Event Listeners
 
-  bgColor.style.backgroundColor = colors.names[random]
-  textColor.textContent = colors.names[random]
+palette.addEventListener('click', (e) => {
+  const objectLength = Object.keys(colors).length
+  const randomPropIndex = generateRandom(objectLength)
+  const randomProp = Object.keys(colors)[randomPropIndex]
+
+  changeColor(generateValue(randomProp))
 })
 
 textColor.addEventListener('click', (e) => {
@@ -181,7 +189,33 @@ textColor.addEventListener('click', (e) => {
 
   setTimeout(() => {
     tooltip.classList.remove('display')
-  }, 500)
+  }, 750)
 
   navigator.clipboard.writeText(textColor.textContent)
 })
+
+// Functions
+
+function generateRandom(length) {
+  return Math.floor(Math.random() * length)
+}
+
+function generateValue(prop) {
+  if (prop === 'names') {
+    return colors[prop][generateRandom(colors[prop].length)]
+  }
+
+  if (prop === 'hex') {
+    return (
+      '#' +
+      Math.floor(Math.random() * (0xffffff + 1))
+        .toString(16)
+        .padStart(6, '0')
+    )
+  }
+}
+
+function changeColor(value) {
+  bgColor.style.backgroundColor = value
+  textColor.textContent = value
+}
