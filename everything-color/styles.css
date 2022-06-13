@@ -1,0 +1,53 @@
+.main__hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: cornflowerblue;
+  font-size: 3rem;
+}
+
+.main__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  background-color: white;
+  padding: 0.5em;
+  border: 4px solid black;
+  border-radius: 6px;
+  box-shadow: 4px 4px black;
+}
+
+.main__text {
+  color: black;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+}
+
+.main__emoji {
+  user-select: none;
+  cursor: pointer;
+}
+
+.tooltip__text {
+  border: 2px solid black;
+  border-radius: 3px;
+  box-shadow: 2px 2px black;
+  padding: 0.5em 1em;
+  background-color: white;
+  position: fixed;
+  bottom: 2.5%;
+  left: 50%;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-50%) scale3d(0.1, 0.1, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.display {
+  opacity: 1;
+  transform: translateX(-50%) scale3d(1, 1, 1);
+}
