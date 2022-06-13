@@ -164,6 +164,7 @@ const colors = {
     'Black',
   ],
   hex: ['#000000'],
+  hsl: 'hsl',
 }
 
 // DOM Variables
@@ -212,6 +213,16 @@ function generateValue(prop) {
         .toString(16)
         .padStart(6, '0')
     )
+  }
+
+  if (prop === 'hsl') {
+    const MAX_HUE_VALUE = 360
+    const MAX_SATURATION_VALUE = 100
+    const MAX_LIGHTNESS_VALUE = 100
+
+    return `hsl(${generateRandom(MAX_HUE_VALUE)}, ${generateRandom(
+      MAX_SATURATION_VALUE
+    )}%, ${generateRandom(MAX_LIGHTNESS_VALUE)}%)`
   }
 }
 
