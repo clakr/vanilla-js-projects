@@ -167,23 +167,24 @@ const colors = {
   hsl: 'hsl',
 }
 
+const history = []
+
 // DOM Variables
 
 const bgColor = document.querySelector('.main__hero')
 const textColor = document.querySelector('.main__text')
 const palette = document.querySelector('.main__emoji')
 const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
+const historyCardBody = document.querySelector('.card__history .card__body')
 
 // Event Listeners
 
+window.addEventListener('load', () => {
+  changeColor()
+})
+
 palette.addEventListener('click', () => {
-  const filtered = [...checkBoxes].filter((el) => el.checked).map((el) => el.id)
-
-  const filteredLength = filtered.length
-  const randomPropIndex = generateRandom(filteredLength)
-  const randomProp = filtered[randomPropIndex]
-
-  changeColor(generateValue(randomProp))
+  changeColor()
 })
 
 textColor.addEventListener('click', (e) => {
@@ -204,7 +205,14 @@ function generateRandom(length) {
   return Math.floor(Math.random() * length)
 }
 
-function generateValue(prop) {
+function generateProp() {
+  const filtered = [...checkBoxes].filter((el) => el.checked).map((el) => el.id)
+  const randomPropIndex = generateRandom(filtered.length)
+
+  return filtered[randomPropIndex]
+}
+
+function generateValue(prop = generateProp()) {
   if (prop === 'names') {
     return colors[prop][generateRandom(colors[prop].length)]
   }
@@ -229,7 +237,43 @@ function generateValue(prop) {
   }
 }
 
-function changeColor(value) {
+function changeColor(value = generateValue()) {
+  if (value == null) {
+    value = 'la pa aq maisip kung ano ilalagay pag no options checked'
+  }
+
   bgColor.style.backgroundColor = value
   textColor.textContent = value
+
+  historyUnshift(value)
+}
+
+function historyUnshift(value) {
+  if (history.length == 10) {
+    history.pop()
+  }
+  history.unshift(value)
+  createCardItem(value)
+}
+
+function createCardItem(value) {
+  const item = document.createElement('div')
+
+  item.classList.add('card__item')
+  item.textContent = value
+  item.style.backgroundColor = value
+
+  historyCardBody.prepend(item)
+
+  handleCardItem()
+}
+
+function handleCardItem() {
+  const itemList = document.querySelectorAll(
+    '.card__history .card__body .card__item'
+  )
+
+  if (itemList.length == 10) {
+    historyCardBody.removeChild(historyCardBody.lastElementChild)
+  }
 }
