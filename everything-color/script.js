@@ -172,13 +172,16 @@ const colors = {
 const bgColor = document.querySelector('.main__hero')
 const textColor = document.querySelector('.main__text')
 const palette = document.querySelector('.main__emoji')
+const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
 
 // Event Listeners
 
-palette.addEventListener('click', (e) => {
-  const objectLength = Object.keys(colors).length
-  const randomPropIndex = generateRandom(objectLength)
-  const randomProp = Object.keys(colors)[randomPropIndex]
+palette.addEventListener('click', () => {
+  const filtered = [...checkBoxes].filter((el) => el.checked).map((el) => el.id)
+
+  const filteredLength = filtered.length
+  const randomPropIndex = generateRandom(filteredLength)
+  const randomProp = filtered[randomPropIndex]
 
   changeColor(generateValue(randomProp))
 })
@@ -192,7 +195,7 @@ textColor.addEventListener('click', (e) => {
     tooltip.classList.remove('display')
   }, 750)
 
-  navigator.clipboard.writeText(textColor.textContent)
+  navigator.clipboard.writeText(e.target.textContent)
 })
 
 // Functions
