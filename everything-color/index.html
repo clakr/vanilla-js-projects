@@ -24,36 +24,41 @@
   <body>
     <span class="tooltip__text">Copied to Clipboard</span>
 
-    <div class="card__checkboxes">
-      <div class="card__header">Color Values</div>
-      <div class="card__body">
-        <div>
-          <input type="checkbox" name="names" id="names" checked />
-          <label for="names">Color Names</label>
-        </div>
-        <div>
-          <input type="checkbox" name="hex" id="hex" checked />
-          <label for="hex">Hex Values</label>
-        </div>
-        <div>
-          <input type="checkbox" name="hsl" id="hsl" checked />
-          <label for="hsl">HSL Values</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="card__history">
-      <div class="card__header">History</div>
-      <div class="card__body"></div>
-    </div>
-
     <main>
       <section class="main__hero">
+        <div class="settings">
+          <div class="settings__body">
+            <div class="card__checkboxes">
+              <div class="card__header">Color Values</div>
+              <div class="card__body">
+                <div>
+                  <input type="checkbox" name="names" id="names" checked />
+                  <label for="names">Color Names</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="hex" id="hex" checked />
+                  <label for="hex">Hex Values</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="hsl" id="hsl" checked />
+                  <label for="hsl">HSL Values</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="card__history">
+              <div class="card__header">History</div>
+              <div class="card__body" id="style-2"></div>
+            </div>
+          </div>
+        </div>
+
         <div class="main__container">
           <p class="main__text"></p>
           <span class="main__emoji">🎨</span>
         </div>
       </section>
+      <section style="height: 100vh"></section>
     </main>
   </body>
 </html>

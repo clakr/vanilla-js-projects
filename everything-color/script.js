@@ -1,171 +1,167 @@
 // Global Variables
 
-const colors = {
-  names: [
-    // Red
-    'IndianRed',
-    'LightCoral',
-    'Salmon',
-    'DarkSalmon',
-    'LightSalmon',
-    'Crimson',
-    'Red',
-    'FireBrick',
-    'DarkRed',
+const names = [
+  // Red
+  'IndianRed',
+  'LightCoral',
+  'Salmon',
+  'DarkSalmon',
+  'LightSalmon',
+  'Crimson',
+  'Red',
+  'FireBrick',
+  'DarkRed',
 
-    // Pink
-    'Pink',
-    'LightPink',
-    'HotPink',
-    'DeepPink',
-    'MediumVioletRed',
-    'PaleVioletRed',
+  // Pink
+  'Pink',
+  'LightPink',
+  'HotPink',
+  'DeepPink',
+  'MediumVioletRed',
+  'PaleVioletRed',
 
-    // Orange
-    'Coral',
-    'Tomato',
-    'OrangeRed',
-    'DarkOrange',
-    'Orange',
+  // Orange
+  'Coral',
+  'Tomato',
+  'OrangeRed',
+  'DarkOrange',
+  'Orange',
 
-    // Yellow
-    'Gold',
-    'Yellow',
-    'LightYellow',
-    'LemonChiffon',
-    'LightGoldenrodYellow',
-    'PapayaWhip',
-    'Moccasin',
-    'PeachPuff',
-    'PaleGoldenrod',
-    'Khaki',
-    'DarkKhaki',
+  // Yellow
+  'Gold',
+  'Yellow',
+  'LightYellow',
+  'LemonChiffon',
+  'LightGoldenrodYellow',
+  'PapayaWhip',
+  'Moccasin',
+  'PeachPuff',
+  'PaleGoldenrod',
+  'Khaki',
+  'DarkKhaki',
 
-    // Purple
-    'Lavender',
-    'Thistle',
-    'Plum',
-    'Violet',
-    'Orchid',
-    'Fuchsia',
-    'Magenta',
-    'MediumOrchid',
-    'MediumPurple',
-    'Amethyst',
-    'BlueViolet',
-    'DarkViolet',
-    'DarkOrchid',
-    'DarkMagenta',
-    'Purple',
-    'Indigo',
-    'SlateBlue',
-    'DarkSlateBlue',
-    'MediumSlateBlue',
+  // Purple
+  'Lavender',
+  'Thistle',
+  'Plum',
+  'Violet',
+  'Orchid',
+  'Fuchsia',
+  'Magenta',
+  'MediumOrchid',
+  'MediumPurple',
+  'Amethyst',
+  'BlueViolet',
+  'DarkViolet',
+  'DarkOrchid',
+  'DarkMagenta',
+  'Purple',
+  'Indigo',
+  'SlateBlue',
+  'DarkSlateBlue',
+  'MediumSlateBlue',
 
-    // Green
-    'GreenYellow',
-    'Chartreuse',
-    'LawnGreen',
-    'Lime',
-    'LimeGreen',
-    'PaleGreen',
-    'LightGreen',
-    'MediumSpringGreen',
-    'SpringGreen',
-    'MediumSeaGreen',
-    'SeaGreen',
-    'ForestGreen',
-    'Green',
-    'DarkGreen',
-    'YellowGreen',
-    'OliveDrab',
-    'Olive',
-    'DarkOliveGreen',
-    'MediumAquamarine',
-    'DarkSeaGreen',
-    'LightSeaGreen',
-    'DarkCyan',
-    'Teal',
+  // Green
+  'GreenYellow',
+  'Chartreuse',
+  'LawnGreen',
+  'Lime',
+  'LimeGreen',
+  'PaleGreen',
+  'LightGreen',
+  'MediumSpringGreen',
+  'SpringGreen',
+  'MediumSeaGreen',
+  'SeaGreen',
+  'ForestGreen',
+  'Green',
+  'DarkGreen',
+  'YellowGreen',
+  'OliveDrab',
+  'Olive',
+  'DarkOliveGreen',
+  'MediumAquamarine',
+  'DarkSeaGreen',
+  'LightSeaGreen',
+  'DarkCyan',
+  'Teal',
 
-    // Blue
-    'Aqua',
-    'Cyan',
-    'LightCyan',
-    'PaleTurquoise',
-    'Aquamarine',
-    'Turquoise',
-    'MediumTurquoise',
-    'DarkTurquoise',
-    'CadetBlue',
-    'SteelBlue',
-    'LightSteelBlue',
-    'PowderBlue',
-    'LightBlue',
-    'SkyBlue',
-    'LightSkyBlue',
-    'DeepSkyBlue',
-    'DodgerBlue',
-    'CornflowerBlue',
-    'RoyalBlue',
-    'Blue',
-    'MediumBlue',
-    'DarkBlue',
-    'Navy',
-    'MidnightBlue',
+  // Blue
+  'Aqua',
+  'Cyan',
+  'LightCyan',
+  'PaleTurquoise',
+  'Aquamarine',
+  'Turquoise',
+  'MediumTurquoise',
+  'DarkTurquoise',
+  'CadetBlue',
+  'SteelBlue',
+  'LightSteelBlue',
+  'PowderBlue',
+  'LightBlue',
+  'SkyBlue',
+  'LightSkyBlue',
+  'DeepSkyBlue',
+  'DodgerBlue',
+  'CornflowerBlue',
+  'RoyalBlue',
+  'Blue',
+  'MediumBlue',
+  'DarkBlue',
+  'Navy',
+  'MidnightBlue',
 
-    // Brown
-    'Cornsilk',
-    'BlanchedAlmond',
-    'Bisque',
-    'NavajoWhite',
-    'Wheat',
-    'BurlyWood',
-    'Tan',
-    'RosyBrown',
-    'SandyBrown',
-    'Goldenrod',
-    'DarkGoldenrod',
-    'Peru',
-    'Chocolate',
-    'SaddleBrown',
-    'Sienna',
-    'Brown',
-    'Maroon',
+  // Brown
+  'Cornsilk',
+  'BlanchedAlmond',
+  'Bisque',
+  'NavajoWhite',
+  'Wheat',
+  'BurlyWood',
+  'Tan',
+  'RosyBrown',
+  'SandyBrown',
+  'Goldenrod',
+  'DarkGoldenrod',
+  'Peru',
+  'Chocolate',
+  'SaddleBrown',
+  'Sienna',
+  'Brown',
+  'Maroon',
 
-    // White
-    'White',
-    'Snow',
-    'Honeydew',
-    'MintCream',
-    'Azure',
-    'AliceBlue',
-    'GhostWhite',
-    'WhiteSmoke',
-    'Seashell',
-    'Beige',
-    'OldLace',
-    'FloralWhite',
-    'Ivory',
-    'AntiqueWhite',
-    'Linen',
-    'LavenderBlush',
-    'MistyRose',
+  // White
+  'White',
+  'Snow',
+  'Honeydew',
+  'MintCream',
+  'Azure',
+  'AliceBlue',
+  'GhostWhite',
+  'WhiteSmoke',
+  'Seashell',
+  'Beige',
+  'OldLace',
+  'FloralWhite',
+  'Ivory',
+  'AntiqueWhite',
+  'Linen',
+  'LavenderBlush',
+  'MistyRose',
 
-    // Grey
-    'Gainsboro',
-    'LightGrey',
-    'Silver',
-    'DarkGray',
-    'Gray',
-    'DimGray',
-    'LightSlateGray',
-    'SlateGray',
-    'DarkSlateGray',
-    'Black',
-  ],
-  hex: ['#000000'],
-  hsl: 'hsl',
-}
+  // Grey
+  'Gainsboro',
+  'LightGrey',
+  'Silver',
+  'DarkGray',
+  'Gray',
+  'DimGray',
+  'LightSlateGray',
+  'SlateGray',
+  'DarkSlateGray',
+  'Black',
+]
 
 const history = []
 
@@ -180,16 +176,17 @@ const historyCardBody = document.querySelector('.card__history .card__body')
 // Event Listeners
 
 window.addEventListener('load', () => {
-  changeColor()
+  changeColor(true)
 })
 
 palette.addEventListener('click', () => {
-  changeColor()
+  changeColor(true)
 })
 
 textColor.addEventListener('click', (e) => {
   const tooltip = document.querySelector('.tooltip__text')
 
+  console.log(tooltip)
   tooltip.classList.add('display')
 
   setTimeout(() => {
@@ -214,7 +211,7 @@ function generateProp() {
 
 function generateValue(prop = generateProp()) {
   if (prop === 'names') {
-    return colors[prop][generateRandom(colors[prop].length)]
+    return names[generateRandom(names.length)]
   }
 
   if (prop === 'hex') {
@@ -237,7 +234,7 @@ function generateValue(prop = generateProp()) {
   }
 }
 
-function changeColor(value = generateValue()) {
+function changeColor(createElement = true, value = generateValue()) {
   if (value == null) {
     value = 'la pa aq maisip kung ano ilalagay pag no options checked'
   }
@@ -245,7 +242,9 @@ function changeColor(value = generateValue()) {
   bgColor.style.backgroundColor = value
   textColor.textContent = value
 
-  historyUnshift(value)
+  if (createElement) {
+    historyUnshift(value)
+  }
 }
 
 function historyUnshift(value) {
@@ -265,10 +264,14 @@ function createCardItem(value) {
 
   historyCardBody.prepend(item)
 
-  handleCardItem()
+  item.addEventListener('click', (e) => {
+    changeColor(false, e.target.textContent)
+  })
+
+  handleCardItemList()
 }
 
-function handleCardItem() {
+function handleCardItemList() {
   const itemList = document.querySelectorAll(
     '.card__history .card__body .card__item'
   )
