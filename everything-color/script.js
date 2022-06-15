@@ -214,6 +214,14 @@ function generateValue(prop = generateProp()) {
     return names[generateRandom(names.length)]
   }
 
+  if (prop === 'rgb') {
+    const MAX_COLOR_VALUE = 255
+
+    return `rgb(${generateRandom(MAX_COLOR_VALUE)}, ${generateRandom(
+      MAX_COLOR_VALUE
+    )}, ${generateRandom(MAX_COLOR_VALUE)})`
+  }
+
   if (prop === 'hex') {
     return (
       '#' +
@@ -236,7 +244,7 @@ function generateValue(prop = generateProp()) {
 
 function changeColor(createElement = true, value = generateValue()) {
   if (value == null) {
-    value = 'la pa aq maisip kung ano ilalagay pag no options checked'
+    return
   }
 
   bgColor.style.backgroundColor = value
