@@ -17,6 +17,8 @@ main {
 
 .main__count {
   font-size: 4rem;
+  transition: all 0.1s;
+  position: relative;
 }
 
 .main__btns {
@@ -34,4 +36,53 @@ main {
   border-radius: 6px;
   box-shadow: 3px 3px black;
   cursor: pointer;
+  transition: all 0.1s;
+}
+
+button[data-action='decrement'] {
+  background-color: hsl(0, 100%, 40%);
+}
+
+button[data-action='increment'] {
+  background-color: hsl(142, 100%, 40%);
+}
+
+button:hover {
+  transform: translateY(-10%);
+}
+
+.sub__count {
+  position: absolute;
+  top: 0;
+  left: 120%;
+  font-size: 1.25rem;
+}
+
+@keyframes clicked {
+  0% {
+    transform: translateY(-10%) scale(1);
+  }
+  100% {
+    transform: translateY(-10%) scale(1.1);
+  }
+}
+
+@keyframes changed {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-5%);
+  }
+}
+
+@keyframes subCount {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-75%);
+  }
 }
