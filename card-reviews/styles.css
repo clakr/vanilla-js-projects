@@ -25,23 +25,18 @@ body {
     var(--linear-one) 0%,
     var(--linear-two) 100%
   );
+  overflow-x: hidden;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   height: 100vh;
-}
-
-.review__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  height: 80vh;
-  width: 55vh;
-  /* overflow: hidden; */
+  width: max-content;
+  padding-inline: 42.5em;
+  gap: 100vw;
 }
 
 .card__item {
@@ -49,8 +44,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 500px;
-  aspect-ratio: 16/9;
   border-radius: 15px;
   background-color: var(--white);
   position: relative;
@@ -58,6 +51,8 @@ main {
   padding-inline: 2em;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
+  height: 280px;
+  width: 500px;
 }
 
 .card__item svg {

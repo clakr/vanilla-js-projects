@@ -1,4 +1,4 @@
-const cardContainer = document.querySelector('.review__container')
+const main = document.querySelector('main')
 
 window.addEventListener('DOMContentLoaded', () => {
   if (!localStorage.getItem('data')) fetchData()
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
   </div>`
   })
 
-  cardContainer.innerHTML = createCard.join('')
+  main.innerHTML = createCard.join('')
 })
 
 async function fetchData() {
