@@ -25,18 +25,23 @@ body {
     var(--linear-one) 0%,
     var(--linear-two) 100%
   );
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: nowrap;
   height: 100vh;
   width: max-content;
-  padding-inline: 42.5em;
-  gap: 100vw;
+  display: flex;
+  transition: all 0.5s;
+}
+
+.card__container {
+  width: 100vw;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__item {
