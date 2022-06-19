@@ -1,8 +1,7 @@
 // DOM Variables
 
 const main = document.querySelector('main')
-const prevBtn = document.querySelector('button[data-action="previous"]')
-const nextBtn = document.querySelector('button[data-action="next"]')
+const buttons = document.querySelectorAll('button')
 
 // Global Variables
 
@@ -62,18 +61,25 @@ window.addEventListener('DOMContentLoaded', () => {
   </div>`
   })
   main.innerHTML = createCard.join('')
-  console.log(currentReview)
 })
 
-nextBtn.addEventListener('click', () => {
-  currentReview++
-  main.style.transform = changeTranslateX()
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const action = btn.dataset.action
+
+    if (action == 'previous') {
+      currentReview--
+    }
+
+    if (action == 'next') {
+      currentReview++
+    }
+
+    main.style.transform = changeTranslateX()
+  })
 })
 
-prevBtn.addEventListener('click', () => {
-  currentReview--
-  main.style.transform = changeTranslateX()
-})
+// Functions
 
 async function fetchData() {
   const api = await fetch('https://testimonialapi.toolcarton.com/api')
@@ -83,12 +89,14 @@ async function fetchData() {
 }
 
 function changeTranslateX() {
-  if (currentReview == 10) {
+  const cardItemsLength = document.querySelectorAll('.card__item').length
+
+  if (currentReview == cardItemsLength) {
     currentReview = 0
   }
 
   if (currentReview < 0) {
-    currentReview = 9
+    currentReview = cardItemsLength - 1
   }
 
   return `translateX(${currentReview * -100}vw)`
