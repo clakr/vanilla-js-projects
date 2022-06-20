@@ -138,3 +138,9 @@ footer button svg {
   color: var(--gray-base);
   height: 1.5em;
 }
+
+footer button:focus {
+  border: none;
+  outline: none;
+  background-color: var(--gray-dark);
+}

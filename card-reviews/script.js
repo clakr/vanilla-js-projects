@@ -9,9 +9,11 @@ let currentReview = 0
 
 // Event Listeners
 
-window.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('data')) fetchData()
+window.addEventListener('DOMContentLoaded', async () => {
+  if (!localStorage.getItem('data')) await fetchData()
+
   const data = JSON.parse(localStorage.getItem('data'))
+
   const createCard = data.map((review) => {
     return `<div class="card__container">
     <div class="card__item">
@@ -60,6 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>`
   })
+
   main.innerHTML = createCard.join('')
 })
 
