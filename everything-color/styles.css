@@ -54,6 +54,14 @@ body {
 .main__emoji {
   user-select: none;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.main__emoji:focus {
+  outline: 2px solid black;
+  border-radius: 10px;
 }
 
 .tooltip__text {
@@ -118,11 +126,16 @@ body {
 .card__item {
   padding: 1.75em 2em;
   text-align: center;
+  border: none;
   border-bottom: 2px solid black;
   color: white;
   text-shadow: 0 0 3px black;
   user-select: none;
   cursor: pointer;
+}
+
+.card__item:focus {
+  opacity: 0.5;
 }
 
 .settings {

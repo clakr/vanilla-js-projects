@@ -186,7 +186,6 @@ palette.addEventListener('click', () => {
 textColor.addEventListener('click', (e) => {
   const tooltip = document.querySelector('.tooltip__text')
 
-  console.log(tooltip)
   tooltip.classList.add('display')
 
   setTimeout(() => {
@@ -264,9 +263,10 @@ function historyUnshift(value) {
 }
 
 function createCardItem(value) {
-  const item = document.createElement('div')
+  const item = document.createElement('button')
 
   item.classList.add('card__item')
+  item.setAttribute('type', 'button')
   item.textContent = value
   item.style.backgroundColor = value
 
