@@ -4,6 +4,9 @@
   --green-base: hsl(142, 100%, 40%);
   --red-base: hsl(0, 100%, 40%);
   --black-base: hsl(0, 0%, 0%);
+  --white-base: hsl(0, 0%, 100%);
+
+  --red-light: hsl(0, 100%, 70%);
 
   --green-dark: hsl(142, 100%, 30%);
   --red-dark: hsl(0, 100%, 30%);
@@ -80,6 +83,25 @@ button[data-action='increment'] {
 
 button:hover {
   transform: translateY(-10%);
+}
+
+button:focus {
+  box-shadow: none;
+  outline-width: 3px;
+  outline-style: solid;
+  outline-offset: 3px;
+}
+
+button[data-action='decrement']:focus {
+  outline-color: var(--red-dark);
+}
+
+button[data-action='reset']:focus {
+  outline-color: var(--white-base);
+}
+
+button[data-action='increment']:focus {
+  outline-color: var(--green-dark);
 }
 
 .sub__count {
