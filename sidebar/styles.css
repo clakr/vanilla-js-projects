@@ -20,12 +20,13 @@ body {
 }
 
 aside {
-  width: 300px;
   height: 100vh;
   padding: 1em;
+  position: relative;
 }
 
 .aside__body {
+  width: 300px;
   border-radius: 10px;
   overflow: hidden;
   background-color: var(--aside-color);
@@ -58,7 +59,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
 }
 
 .header__avatar {
@@ -89,14 +90,13 @@ svg {
 }
 
 .aside__search {
-  display: flex;
   margin-top: 2em;
   position: relative;
 }
 
 .aside__search input {
-  flex: 1 1 auto;
-  padding: 0.5em 3em;
+  width: 100%;
+  padding: 0.5em 3.5em;
   border-radius: 10px;
   border: 2px solid hsl(0, 0%, 89%);
   background-color: var(--search-color);
@@ -139,7 +139,7 @@ a:hover svg {
 .settings__item {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1.5em;
   padding: 0.5em;
   border-radius: 10px;
 }
@@ -195,4 +195,14 @@ hr {
 .projects__item:nth-child(4):hover,
 .settings__item:hover {
   color: var(--text-color);
+}
+
+@media screen and (max-width: 425px) {
+  aside {
+    width: 100vw;
+  }
+
+  .aside__body {
+    width: 100%;
+  }
 }
