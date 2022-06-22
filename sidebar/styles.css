@@ -2,6 +2,7 @@
   --body-color: hsl(0, 0%, 90%);
   --aside-color: hsl(0, 0%, 100%);
 
+  --border-color: hsl(0, 0%, 89%);
   --text-color: hsl(0, 0%, 30%);
 
   --search-color: hsl(0, 0%, 96%);
@@ -12,6 +13,9 @@
   --projects-first: hsl(169, 57%, 80%);
   --projects-second: hsl(227, 74%, 88%);
   --projects-third: hsl(275, 73%, 87%);
+
+  --border: 1px solid var(--border-color);
+  --border-radius: 10px;
 }
 
 body {
@@ -23,20 +27,25 @@ aside {
   height: 100vh;
   padding: 1em;
   position: relative;
+  display: flex;
+  gap: 0.5em;
 }
 
-.aside__body {
+.aside__main,
+.aside__plan {
   width: 300px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   background-color: var(--aside-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 1em;
-  height: 100%;
-  border: 1px solid hsl(0, 0%, 89%);
+  border: var(--border);
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.aside__main {
+  justify-content: space-between;
 }
 
 .aside__upper {
@@ -62,7 +71,8 @@ svg {
   gap: 1em;
 }
 
-.header__avatar {
+.header__avatar,
+.plan__avatar {
   border-radius: 10px;
   overflow: hidden;
   width: 35px;
@@ -70,18 +80,21 @@ svg {
   flex: none;
 }
 
-.header__name {
+.header__name,
+.plan__name {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 0.25em;
 }
 
-.header__name p:first-of-type {
+.header__name p:first-of-type,
+.plan__name p:first-of-type {
   font-weight: bold;
 }
 
-.header__name p:nth-child(2) {
+.header__name p:nth-child(2),
+.plan__name p:nth-child(2) {
   color: var(--title-color);
 }
 
@@ -98,7 +111,8 @@ svg {
   width: 100%;
   padding: 0.5em 3.5em;
   border-radius: 10px;
-  border: 2px solid hsl(0, 0%, 89%);
+  border: var(--border);
+  border-width: 2px;
   background-color: var(--search-color);
 }
 
@@ -195,6 +209,46 @@ hr {
 .projects__item:nth-child(4):hover,
 .settings__item:hover {
   color: var(--text-color);
+}
+
+.aside__plan {
+  width: 325px;
+  gap: 0.5em;
+  height: fit-content;
+  padding: 0.5em;
+}
+
+.plan__items {
+  display: flex;
+  gap: 1em;
+  padding: 0.5em;
+  border-radius: var(--border-radius);
+}
+
+.plan__items:nth-child(3) {
+  background-color: hsl(249, 100%, 97%);
+  font-weight: 400;
+}
+
+.plan__items:hover {
+  font-weight: 400;
+}
+
+.plan__name {
+  gap: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plan__name p:last-child {
+  font-size: 0.75rem;
+}
+
+.aside__sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 425px) {
