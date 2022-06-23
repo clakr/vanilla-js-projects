@@ -8,6 +8,7 @@
 
 body {
   background-color: $body-color;
+  display: flex;
 }
 
 aside {
@@ -15,6 +16,7 @@ aside {
   padding: 1em;
   display: flex;
   gap: 1em;
+  position: relative;
 }
 
 svg {
@@ -32,11 +34,25 @@ button {
 hr {
   width: 100%;
   border: 1px solid lighten($color: $body-color, $amount: 5%);
-  margin-block: -1em;
 }
 
 img {
   @include outlineImage(#E3DFFF)
+}
+
+a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5em;
+  width: 100%;
+  padding: .5em;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: darken($color: $body-color, $amount: 75%);
+  @include borderRadius;
+  @include onHover(true);
 }
 
 .nav {
@@ -90,6 +106,10 @@ img {
     @include flexCenter(column);
   }
 
+  hr {
+    margin-block: -1em;
+  }
+
   &__shared, &__projects {
     &--title {
       display: flex;
@@ -116,36 +136,21 @@ img {
     }
   }
   
-  a {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.5em;
-    width: 100%;
-    padding: .5em;
-    font-weight: 500;
-    font-size: 1.25rem;
-    text-decoration: none;
-    color: darken($color: $body-color, $amount: 75%);
-    @include borderRadius;
-    @include onHover(true);
-  }
+  
 }
 
 .sub {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
   & > div {
     @include panel(325px);
+    position: absolute;
   }
   
   &__plan {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: .5em;
+    top: 1em;
     
     & > div {
       @include itemLayout;
@@ -156,12 +161,34 @@ img {
       }
     }
 
-
     @include itemChildLayout;
     p:last-child{
       font-size: 1rem;
     }
   }
+
+  &__options {
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    bottom: 1em;
+  }
+
+  &__settings {
+    a:nth-of-type(3) svg {
+      @include svgColor(#FEEED0);
+    }
+
+    a:nth-of-type(4) svg {
+      @include svgColor(#ECF9F2);
+    }
+  }
+
+  &__profile {
+    @include itemLayout;
+    @include itemChildLayout;
+  }
+  
 }
 
 

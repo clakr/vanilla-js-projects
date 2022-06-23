@@ -64,11 +64,11 @@ $projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
 }
 
 @mixin itemLayout {
-  @include flexCenter;
   height: 50px;
   gap: 1em;
   cursor: pointer;
   padding: .75em .5em;
+  @include flexCenter;
   @include borderRadius(2);
   @include onHover;
 }
