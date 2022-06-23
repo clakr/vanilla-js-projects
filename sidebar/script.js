@@ -9,9 +9,9 @@ const subOptions = document.querySelector('.sub__options')
 // Event Listeners
 
 navPlan.addEventListener('click', () => {
-  subPlan.style.display = 'flex'
+  subPlan.classList.toggle('show')
 })
 
 navProfile.addEventListener('click', () => {
-  subOptions.style.display = 'flex'
+  subOptions.classList.toggle('show')
 })

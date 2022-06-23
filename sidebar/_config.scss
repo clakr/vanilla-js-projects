@@ -100,3 +100,13 @@ $projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
     }
   }
 }
+
+@mixin transform {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all .1s ease-in-out;
+
+  &.show {
+    transform: scaleX(100%);
+  }
+}

@@ -17,6 +17,7 @@ aside {
   display: flex;
   gap: 1em;
   position: relative;
+  user-select: none;
 }
 
 svg {
@@ -146,21 +147,22 @@ a {
   }
   
   &__plan {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: .5em;
     top: 1em;
+    @include transform;
     
     & > div {
       @include itemLayout;
       width: 100%;
-
+      
       &:nth-child(3){
         background-color: #F3F1FE;
       }
     }
-
+    
     @include itemChildLayout;
     p:last-child{
       font-size: 1rem;
@@ -168,10 +170,11 @@ a {
   }
 
   &__options {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 1em;
     bottom: 1em;
+    @include transform;
   }
 
   &__settings {
@@ -190,6 +193,5 @@ a {
   }
   
 }
-
 
 @import 'tablet';
