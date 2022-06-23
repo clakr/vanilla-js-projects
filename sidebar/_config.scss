@@ -28,11 +28,6 @@ $projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
   }
 }
 
-@mixin border {
-  @include borderRadius();
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-}
-
 @mixin outlineImage($color, $tablet: false) {
   @include borderRadius();
 
@@ -42,7 +37,7 @@ $projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
   }
 }
 
-@mixin onHover($withText: false) {
+@mixin onHover($withText: false, $hoverColor: $icon-color) {
   &:hover {
     background-color: $body-color;
     @if $withText {
@@ -50,7 +45,7 @@ $projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
     }
     
     & svg {
-      stroke: darken($color: $icon-color, $amount: 25%);
+      stroke: darken($color: $hoverColor, $amount: 25%);
     }
   }
 }
@@ -58,4 +53,50 @@ $projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
 @mixin svgColor($hex) {
   fill: $hex;
   stroke: darken($color: $hex, $amount: 20%);
+}
+
+@mixin panel($width: 300px) {
+  width: $width;
+  padding: 1em;
+  background-color: $aside-color;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  @include borderRadius;
+}
+
+@mixin itemLayout {
+  @include flexCenter;
+  height: 50px;
+  gap: 1em;
+  cursor: pointer;
+  padding: .75em .5em;
+  @include borderRadius(2);
+  @include onHover;
+}
+
+@mixin itemChildLayout {
+  img, svg {
+    flex: none;
+    height: 100%;
+  }
+
+  &--avatar {
+    height: 100%;
+  }
+
+  &--desc {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    font-size: 1.25rem;
+
+    p:first-child{
+      font-weight: bold;
+    }
+
+    p:last-child{
+      color: darken($color: $body-color, $amount: 25%);
+    }
+  }
 }

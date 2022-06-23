@@ -13,23 +13,40 @@ body {
 aside {
   height: 100vh;
   padding: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+svg {
+  width: 1.75em;
+  color: $icon-color;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid lighten($color: $body-color, $amount: 5%);
+  margin-block: -1em;
+}
+
+img {
+  @include outlineImage(#E3DFFF)
 }
 
 .nav {
-  width: 300px;
+  @include panel;
   height: 100%;
-  padding: 1em;
-  background-color: $aside-color;
-  @include border;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: all .25s ease-in-out;
   overflow: hidden;
-
-  img {
-    @include outlineImage(#E3DFFF)
-  }
 
   & > div {
     width: 100%;
@@ -47,39 +64,8 @@ aside {
   }
 
   &__plan, &__profile {
-    @include flexCenter;
-    height: 50px;
-    gap: 1em;
-    cursor: pointer;
-    padding: .5em;
-    @include borderRadius(2);
-    @include onHover;
-
-    img, svg {
-      flex: none;
-      height: 100%;
-    }
-
-    &--avatar {
-      height: 100%;
-    }
-
-    &--desc {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      height: 100%;
-      font-size: 1.25rem;
-
-      p:first-child{
-        font-weight: bold;
-      }
-
-      p:last-child{
-        color: darken($color: $body-color, $amount: 25%);
-      }
-    }
+    @include itemLayout;
+    @include itemChildLayout;
   }
 
   &__search {
@@ -125,11 +111,6 @@ aside {
   }
 
   &__lower {
-
-    &__profile {
-
-    }
-
     hr {
       width: 100vmax;
     }
@@ -151,22 +132,36 @@ aside {
   }
 }
 
-svg {
-  width: 1.75em;
-  color: $icon-color;
-}
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-button {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
+  & > div {
+    @include panel(325px);
+  }
+  
+  &__plan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5em;
+    
+    & > div {
+      @include itemLayout;
+      width: 100%;
 
-hr {
-  width: 100%;
-  border: 1px solid lighten($color: $body-color, $amount: 5%);
-  margin-block: -1em;
+      &:nth-child(3){
+        background-color: #F3F1FE;
+      }
+    }
+
+
+    @include itemChildLayout;
+    p:last-child{
+      font-size: 1rem;
+    }
+  }
 }
 
 
