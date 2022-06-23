@@ -3,19 +3,59 @@ $aside-color: hsl(0, 0%, 100%);
 
 $icon-color: hsl(0, 0%, 60%);
 
+$maxTabletBreakpoint: 768px;
+
+$projectsColor: (1:#AFE9DD, 2:#C9D3F7, 3: #E3C6F6);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+@mixin flexCenter($flexDir: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $flexDir;
+}
+
+@mixin borderRadius($divide: false) {
+  @if $divide {
+    border-radius: math.div(10px, $divide);
+  } @else {
+    border-radius: 10px;
+  }
+}
+
 @mixin border {
-  border-radius: 10px;
+  @include borderRadius();
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-@mixin outlineImage($color) {
-  border-radius: 10px;
+@mixin outlineImage($color, $tablet: false) {
+  @include borderRadius();
+
+  @if $tablet {
     outline: 3px solid $color;
     outline-offset: 3px;
+  }
+}
+
+@mixin onHover($withText: false) {
+  &:hover {
+    background-color: $body-color;
+    @if $withText {
+      font-weight: 700;
+    }
+    
+    & svg {
+      stroke: darken($color: $icon-color, $amount: 25%);
+    }
+  }
+}
+
+@mixin svgColor($hex) {
+  fill: $hex;
+  stroke: darken($color: $hex, $amount: 20%);
 }

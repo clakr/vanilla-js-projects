@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -26,24 +26,42 @@
       <nav class="nav">
         <div class="nav__upper">
           <div class="nav__plan">
-            <img src="/widelab-logo.png" alt="" />
+            <div class="nav__plan--avatar">
+              <img src="/widelab-logo.png" alt="" />
+            </div>
+            <div class="nav__plan--desc">
+              <p>widelab</p>
+              <p>Team Plan</p>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+              />
+            </svg>
           </div>
           <div class="nav__search">
-            <a href=".">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+            <input type="text" placeholder="Search" />
           </div>
           <div class="nav__actions">
             <a href=".">
@@ -60,6 +78,7 @@
                   d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
                 />
               </svg>
+              <span>Inbox</span>
             </a>
             <a href=".">
               <svg
@@ -75,6 +94,7 @@
                   d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
                 />
               </svg>
+              <span>Activity</span>
             </a>
             <a href=".">
               <svg
@@ -90,9 +110,30 @@
                   d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                 />
               </svg>
+              <span>Schedule</span>
             </a>
           </div>
+          <hr />
           <div class="nav__shared">
+            <div class="nav__shared--title">
+              <p>Shared</p>
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
+                </svg>
+              </button>
+            </div>
             <a href=".">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +148,7 @@
                   d="M13 10V3L4 14h7v7l9-11h-7z"
                 />
               </svg>
+              <span>Boosts</span>
             </a>
             <a href=".">
               <svg
@@ -122,9 +164,13 @@
                   d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
+              <span>Documents</span>
             </a>
           </div>
           <div class="nav__projects">
+            <div class="nav__projects--title">
+              <p>Projects</p>
+            </div>
             <a href=".">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,6 +185,7 @@
                   d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                 />
               </svg>
+              <span>Personal</span>
             </a>
             <a href=".">
               <svg
@@ -154,6 +201,7 @@
                   d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                 />
               </svg>
+              <span>Business</span>
             </a>
             <a href=".">
               <svg
@@ -169,6 +217,7 @@
                   d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                 />
               </svg>
+              <span>Travel</span>
             </a>
             <a href=".">
               <svg
@@ -184,6 +233,7 @@
                   d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                 />
               </svg>
+              <span>Add New Project</span>
             </a>
           </div>
         </div>
@@ -208,6 +258,7 @@
                   d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
+              <span>Settings</span>
             </a>
             <a href=".">
               <svg
@@ -223,10 +274,31 @@
                   d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
+              <span>Help</span>
             </a>
           </div>
+          <hr />
           <div class="nav__profile">
-            <img src="/avatar.jpg" alt="" />
+            <div class="nav__profile--avatar">
+              <img src="/avatar.jpg" alt="" />
+            </div>
+            <div class="nav__profile--desc">
+              <p>Sandra Marx</p>
+              <p>sandra@gmail.com</p>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 9l4-4 4 4m0 6l-4 4-4-4"
+              />
+            </svg>
           </div>
         </div>
       </nav>

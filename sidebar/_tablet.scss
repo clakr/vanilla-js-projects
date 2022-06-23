@@ -1,0 +1,59 @@
+@media screen and (max-width: $maxTabletBreakpoint) {
+  .nav {
+    width: 75px;
+
+    &__upper {
+      hr {
+        display: none;
+      }
+    }
+
+    
+    &__plan, &__profile {
+      &--desc, svg {
+        display: none;
+      }
+    }
+
+    &__plan {
+      img {
+        @include outlineImage(#E3DFFF, true)
+      }
+    }
+
+    &__profile {
+      img {
+        @include outlineImage(#E5E5E5, true)
+      }
+    }
+    
+    &__search {
+      input {
+        display: none;
+      }
+
+      svg {
+        left: 25%;
+      }
+    }
+
+    &__actions, &__shared, &__projects, &__settings{
+      a{
+        span{
+          display: none;
+        }
+      }
+
+      &--title {
+        display: none;
+      }
+    }
+
+    a {
+      justify-content: center;
+    }
+  }
+
+  
+
+}
