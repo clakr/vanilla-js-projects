@@ -1,1 +1,97 @@
-@use 'config';
+@use 'config' as *;
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  margin-block: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  width: 75vw;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-weight: bold;
+  }
+
+  p {
+    color: lighten($color: $black-base, $amount: 75%);
+    margin-block: 1em;
+    font-size: 1.25em;
+  }
+
+  input {
+    border: 1px solid
+      lighten($color: $black-base, $amount: 75%);
+    border-radius: 5px;
+    padding: 0.75em 1.5em;
+    width: 350px;
+  }
+}
+
+.faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-block: 1em;
+    border-bottom: 1px solid
+      lighten($color: $black-base, $amount: 75%);
+    cursor: pointer;
+
+    &--summary {
+      display: flex;
+      align-items: center;
+
+      & h3 {
+        font-weight: bold;
+        flex: 1 1 auto;
+      }
+
+      & svg {
+        width: 1.5em;
+        cursor: pointer;
+      }
+
+      .minusBtn {
+        display: none;
+      }
+    }
+
+    &--details {
+      display: none;
+      width: 65ch;
+      color: lighten($color: $black-base, $amount: 60%);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      animation: show 0.5s ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
