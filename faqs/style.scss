@@ -50,7 +50,7 @@ header {
   &__item {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.5em;
     padding-block: 1em;
     border-bottom: 1px solid
       lighten($color: $black-base, $amount: 75%);
@@ -59,6 +59,9 @@ header {
     &--summary {
       display: flex;
       align-items: center;
+      position: relative;
+      opacity: 0;
+      @include animate(fadeIn);
 
       & h3 {
         font-weight: bold;
@@ -68,30 +71,45 @@ header {
       & svg {
         width: 1.5em;
         cursor: pointer;
+        position: absolute;
+        right: 0;
+        opacity: 0;
       }
 
-      .minusBtn {
-        display: none;
+      .show {
+        @include animate(fadeIn);
       }
     }
 
     &--details {
-      display: none;
       width: 65ch;
       color: lighten($color: $black-base, $amount: 60%);
       font-size: 0.9rem;
       line-height: 1.5;
-      animation: show 0.5s ease-in-out forwards;
+      position: fixed;
+      left: -100%;
+      transform: translateX(-50%);
+    }
+
+    .collapsed {
+      @include animate(detailsShow);
     }
   }
 }
 
-@keyframes show {
-  0% {
-    transform: translateY(-50%);
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes detailsShow {
+  50% {
+    transform: translateY(-25%);
   }
 
   100% {
-    transform: translateY(0);
+    position: static;
+    transform: translateY(0%);
   }
 }

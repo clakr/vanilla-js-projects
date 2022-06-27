@@ -7,7 +7,9 @@ summaryBtn.forEach((item) => {
   const plusBtn = item.querySelector('.plusBtn')
 
   item.addEventListener('click', () => {
-    minusBtn.style.display = 'block'
-    plusBtn.style.display = 'none'
+    minusBtn.classList.toggle('show')
+    plusBtn.classList.toggle('show')
+
+    item.nextElementSibling.classList.toggle('collapsed')
   })
 })

@@ -11,3 +11,7 @@ $black-base: #000000;
 body {
   color: $font-color;
 }
+
+@mixin animate($name) {
+  animation: $name 0.5s ease-in-out forwards;
+}
