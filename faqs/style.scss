@@ -49,19 +49,19 @@ header {
 
   &__item {
     display: flex;
+    opacity: 0;
     flex-direction: column;
     gap: 1.5em;
     padding-block: 1em;
     border-bottom: 1px solid
       lighten($color: $black-base, $amount: 75%);
     cursor: pointer;
+    @include animate(fadeIn);
 
     &--summary {
       display: flex;
       align-items: center;
       position: relative;
-      opacity: 0;
-      @include animate(fadeIn);
 
       & h3 {
         font-weight: bold;
@@ -95,11 +95,30 @@ header {
       @include animate(detailsShow);
     }
   }
+
+  .showed {
+    @include animate(fadeIn);
+  }
+
+  .hidden {
+    @include animate(fadeOut);
+  }
 }
 
 @keyframes fadeIn {
-  to {
+  100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    position: fixed;
+    left: -100%;
   }
 }
 
