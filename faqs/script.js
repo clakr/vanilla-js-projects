@@ -28,7 +28,7 @@ search.addEventListener('input', (e) => {
 function searchQuery(value = value.toLowerCase()) {
   initializeItems()
 
-  const filter = Array.from(faqsItems)
+  Array.from(faqsItems)
     .filter((item) => {
       const h3 = item
         .querySelector('h3')

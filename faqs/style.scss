@@ -33,12 +33,15 @@ header {
     font-size: 1.25em;
   }
 
-  input {
-    border: 1px solid
-      lighten($color: $black-base, $amount: 75%);
-    border-radius: 5px;
-    padding: 0.75em 1.5em;
-    width: 350px;
+  form {
+    input {
+      border: 1px solid
+        lighten($color: $black-base, $amount: 75%);
+      border-radius: 5px;
+      padding: 0.75em 1.5em;
+      width: 300px;
+      position: relative;
+    }
   }
 }
 
