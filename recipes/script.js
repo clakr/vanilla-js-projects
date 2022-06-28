@@ -1,7 +1,19 @@
 window.addEventListener('DOMContentLoaded', async () => {
   if (!localStorage.getItem('recipe')) await fetchData()
 
-  const data = JSON.parse(localStorage.getItem('recipe'))
+  const data = JSON.parse(
+    localStorage.getItem('recipe')
+  ).recipes
+
+  console.log(data)
+
+  // To change
+  const displayRecipes = data.map((recipe) => {
+    return `${recipe.title}<br><br>`
+  })
+
+  document.querySelector('body').innerHTML =
+    displayRecipes.join('')
 })
 
 async function fetchData() {
