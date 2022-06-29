@@ -22,7 +22,7 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -31,5 +31,90 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Food Recipes</h1>
+      <aside>
+        <h2>Filter by category</h2>
+        <p>
+          <span id="filterCount"></span> filters discovered
+          &#183; <span id="checkCount">0</span> selected
+        </p>
+
+        <!-- General -->
+        <h3>General</h3>
+        <div class="form-group">
+          <!-- Cheap -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Cheap
+          </label>
+
+          <!-- Dairy Free -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Dairy-free
+          </label>
+
+          <!-- Gluten Free -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Gluten-free
+          </label>
+
+          <!-- Low FODMAP -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Low FODMAP
+          </label>
+
+          <!-- Sustainable -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Sustainable
+          </label>
+
+          <!-- Vegan -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Vegan
+          </label>
+
+          <!-- Vegetarian -->
+          <label class="form-group__item">
+            <input type="checkbox" />
+            Vegetarian
+          </label>
+        </div>
+
+        <!-- Cuisines -->
+        <h3>Cuisines</h3>
+        <div class="form-group" id="cuisine"></div>
+
+        <!-- Diets -->
+        <h3>Diets</h3>
+        <div class="form-group" id="diets"></div>
+
+        <!-- Dish Types -->
+        <h3>Dish Types</h3>
+        <div class="form-group" id="dishTypes"></div>
+      </aside>
+      <main></main>
+    </div>
+  </body>
 </html>
+
+<!-- General -->
+<!-- cheap
+dairy free
+gluten-free
+low fodmap
+sustainable
+vegan
+vegetarian -->
+
+<!-- Cuisines -->
+
+<!-- Diets -->
+
+<!-- Dish type -->

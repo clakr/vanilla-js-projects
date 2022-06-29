@@ -1,1 +1,59 @@
-@use 'config';
+@use 'config' as *;
+
+.container {
+  margin: 5em;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 3em;
+
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-block: 1em;
+    grid-column: 1 / span 2;
+  }
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1.5em;
+  border: 1px solid
+    lighten($color: $gray-base, $amount: 25%);
+  border-radius: 10px;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: lighten($color: $gray-base, $amount: 25%);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    padding: 0.5em;
+    font-weight: 500;
+    border-bottom: 2px solid
+      lighten($color: $gray-base, $amount: 40%);
+  }
+
+  .form-group {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+
+    &__item {
+      outline: 1px solid red;
+      border-radius: 100vmax;
+      cursor: pointer;
+      padding: 0.75em;
+      user-select: none;
+      text-transform: capitalize;
+    }
+  }
+}
